@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a la Seguridad Informática</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #007bff;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .image-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-section img {
+            width: 70%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #007bff;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #343a40;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .password-check {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .password-check input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+
+        .password-check p {
+            font-size: 0.9rem;
+        }
+
+        .password-check span {
+            font-weight: bold;
+        }
+
+        .password-strength {
+            height: 10px;
+            width: 100%;
+            max-width: 400px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .password-strength div {
+            height: 100%;
+            width: 0;
+            transition: width 0.5s;
+        }
+
+        .password-strength.red div {
+            background-color: #dc3545;
+        }
+
+        .password-strength.yellow div {
+            background-color: #ffc107;
+        }
+
+        .password-strength.green div {
+            background-color: #28a745;
+        }
+
+        .password-generator {
+            margin-top: 20px;
+        }
+
+        .password-generator button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #17a2b8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .password-generator button:hover {
+            background-color: #138496;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a la Introducción a la Seguridad Informática</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('home')"><img src="home-icon.png" alt="Inicio" class="icon">Inicio</a></li>
+                <li><a href="#" onclick="showPage('conceptos')"><img src="conceptos-icon.png" alt="Conceptos Básicos" class="icon">Conceptos Básicos</a></li>
+                <li><a href="#" onclick="showPage('amenazas')"><img src="amenazas-icon.png" alt="Amenazas" class="icon">Amenazas</a></li>
+                <li><a href="#" onclick="showPage('buenas_practicas')"><img src="buenas_practicas-icon.png" alt="Buenas Prácticas" class="icon">Buenas Prácticas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>¿Por qué es importante la Seguridad Informática?</h2>
+            <div class="image-section">
+                <img src="seguridad-informatica.jpg" alt="Seguridad Informática">
+            </div>
+            <p>La seguridad informática es crucial para proteger la información y los sistemas de ataques y accesos no autorizados.</p>
+            <h2>¿Qué aprenderás?</h2>
+            <ul>
+                <li>Conceptos básicos de seguridad informática</li>
+                <li>Amenazas y vulnerabilidades comunes</li>
+                <li>Buenas prácticas para protegerte en línea</li>
+            </ul>
+        </section>
+
+        <section id="conceptos" class="hidden">
+            <h2>¿Qué es la Seguridad Informática?</h2>
+            <div class="image-section">
+                <img src="conceptos-basicos.jpg" alt="Conceptos Básicos">
+            </div>
+            <p>La seguridad informática es el conjunto de medidas y controles que protegen los sistemas y datos informáticos contra accesos no autorizados, ataques y daños.</p>
+            <h2>Elementos Clave</h2>
+            <ul>
+                <li>Confidencialidad</li>
+                <li>Integridad</li>
+                <li>Disponibilidad</li>
+            </ul>
+        </section>
+
+        <section id="amenazas" class="hidden">
+            <h2>Principales Amenazas</h2>
+            <div class="image-section">
+                <img src="amenazas.jpg" alt="Amenazas">
+            </div>
+            <ul>
+                <li>Malware</li>
+                <li>Phishing</li>
+                <li>Ataques de ingeniería social</li>
+            </ul>
+            <h2>Vulnerabilidades Comunes</h2>
+            <ul>
+                <li>Contraseñas débiles</li>
+                <li>Software desactualizado</li>
+                <li>Configuraciones inseguras</li>
+            </ul>
+        </section>
+
+        <section id="buenas_practicas" class="hidden">
+            <h2>Consejos para Mantenerte Seguro en Línea</h2>
+            <div class="image-section">
+                <img src="buenas-practicas.jpg" alt="Buenas Prácticas">
+            </div>
+            <ul>
+                <li>Utiliza contraseñas fuertes y únicas</li>
+                <li>Actualiza regularmente tu software</li>
+                <li>Activa la autenticación de dos factores</li>
+            </ul>
+            <h2>Simulación Interactiva</h2>
+            <p>Prueba tus conocimientos sobre seguridad informática con esta simulación interactiva:</p>
+            <button id="simulacionBtn">Iniciar Simulación</button>
+            <div id="simulacion"></div>
+
+            <h2>Aprende a Crear una Contraseña Segura</h2>
+            <div class="password-check">
+                <input type="password" id="passwordInput" placeholder="Introduce tu contraseña">
+                <div class="password-strength">
+                    <div></div>
+                </div>
+                <p id="passwordFeedback"></p>
+                <div class="password-generator">
+                    <button onclick="generatePassword()">Generar Contraseña Segura</button>
+                    <p id="generatedPassword"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Introducción a la Seguridad Informática</p>
+    </footer>
+    <script>
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                if (section.id === pageId) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+
+        document.getElementById("simulacionBtn").addEventListener("click", function() {
+            const simulacionDiv = document.getElementById("simulacion");
+            simulacionDiv.innerHTML = `
+                <p>¿Qué harías si recibes un correo sospechoso?</p>
+                <button onclick="respuestaCorrecta()">Marcar como spam</button>
+                <button onclick="respuestaIncorrecta()">Abrir el correo</button>
+            `;
+        });
+
+        function respuestaCorrecta() {
+            alert("¡Correcto! Has marcado el correo como spam.");
+        }
+
+        function respuestaIncorrecta() {
+            alert("Incorrecto. No debes abrir correos sospechosos.");
+        }
+
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordFeedback = document.getElementById('passwordFeedback');
+        const passwordStrength = document.querySelector('.password-strength div');
+
+        passwordInput.addEventListener('input', function() {
+            const password = passwordInput.value;
+            let feedback = '';
+            let strength = 0;
+
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[!@#$%^&*]/.test(password)) strength++;
+
+            switch (strength) {
+                case 1:
+                case 2:
+                    feedback = 'La contraseña es débil.';
+                    passwordStrength.style.width = '33%';
+                    passwordStrength.style.backgroundColor = '#dc3545';
+                    break;
+                case 3:
+                    feedback = 'La contraseña es moderada.';
+                    passwordStrength.style.width = '66%';
+                    passwordStrength.style.backgroundColor = '#ffc107';
+                    break;
+                case 4:
+                case 5:
+                    feedback = 'La contraseña es segura.';
+                    passwordStrength.style.width = '100%';
+                    passwordStrength.style.backgroundColor = '#28a745';
+                    break;
+                default:
+                    feedback = 'La contraseña es demasiado corta.';
+                    passwordStrength.style.width = '0';
+                    passwordStrength.style.backgroundColor = '#ddd';
+                    break;
+            }
+
+            passwordFeedback.textContent = feedback;
+        });
+
+        function generatePassword() {
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+            let password = "";
+            for (let i = 0; i < 12; i++) {
+                const randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            document.getElementById('generatedPassword').textContent = `Contraseña generada: ${password}`;
+        }
+    </script>
+</body>
+</html>
